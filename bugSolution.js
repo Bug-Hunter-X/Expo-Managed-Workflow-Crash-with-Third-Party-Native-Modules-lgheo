@@ -1,0 +1,9 @@
+The solution involved a multi-pronged approach. First, rigorous testing of the third-party library's native modules in isolation was undertaken to rule out any inherent bugs within that code. Once the native modules were verified as functioning correctly, the focus shifted to the application itself.  The following modifications were made:
+
+1. **Improved Error Handling:** Enhanced error handling was implemented throughout the application to catch any potential exceptions or unexpected behaviors. This involved adding `try...catch` blocks to critical sections of the code and logging comprehensive error messages for analysis.
+2. **Memory Optimization:** Steps were taken to optimize memory usage. Unnecessary variables and data structures were removed or optimized for smaller memory footprints.  Careful consideration of component lifecycles (using `useEffect` with cleanup functions) was also incorporated to ensure that components released resources promptly when unmounted.
+3. **Asynchronous Operations:** Intensive tasks were refactored to utilize asynchronous operations, using libraries such as `async/await` to prevent blocking the main thread and consuming excessive resources. 
+4. **Expo's Debugging Tools:** Expo's debugging features were leveraged to gain deeper insights into the application's behavior at runtime.  Remote debugging enabled the inspection of the app's state and memory allocation. 
+5. **React Native Debugger:** The React Native Debugger was utilized for detailed performance and memory profiling to detect any memory leaks or resource hogs.  The resulting analysis guided optimization efforts.
+
+By implementing these changes, the frequency of the crashes was significantly reduced. While the exact underlying cause remains partly undetermined, these strategies improved the overall stability and resilience of the application under conditions of resource scarcity.
